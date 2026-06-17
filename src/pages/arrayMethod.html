@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let fruits = ["apple", "banana", "orange", "grape", "kiwi"];
+
+    //for in - sees the index of the array
+    for (var index in fruits) {
+        document.write(fruits[index] + "<br>");
+    }
+
+    document.write("<br>");
+
+    //for of - sees the value of the array
+     for (var member of fruits) {
+        document.write("<li>", member, "</li>");
+    }
+    document.write("<br>");
+
+    //for each - used for arrray, anonymous function. sees the value and index of the array. does not return anything
+    let newFruits =fruits.forEach((member, index) =>{
+        document.write("<li>", index +1, "." + member, "</li>");
+        return member.toUpperCase();
+    })
+    document.write("New Fruits: "+newFruits + "<br>"); //undefined because forEach does not return anything
+ document.write("<br>");
+
+    //map- most used. sees the value and index of the array. returns a new array with the same number of elements as the original array
+    newFruits = fruits.map((member, index) =>{
+        document.write("<li>", index +1, "." + member, "</li>");
+        return member.toUpperCase();
+    })
+    document.write("New Fruits: "+newFruits+ "<br>");
+
+    //filter - return condition//filter - return condition
+    new_Fruits = fruits.filter((member, index) =>{
+        return member.length > 5;
+    })
+    document.write("Filetered Fruits with length > 5: "+new_Fruits+ "<br>");
+
+    new_Fruits = fruits.filter(member => member.match('ap'))
+    document.write("Filetered Fruits with ap: "+new_Fruits+ "<br>");
+
+    //find
+    let found = fruits.find(member =>{
+        return member.length > 5;
+    })
+    document.write("<br>"+ "Found Fruit (First) with 5 letters: "+found);
+
+    //findIndex
+    let foundIndex = fruits.findIndex(member =>{
+        return member.length > 5;
+    })
+    document.write("<br>"+ "Found Fruit Index with 5 letters: "+foundIndex);
+
+    //findLast
+    found = fruits.findLast(member =>{
+        return member.length > 5;
+    })
+    document.write("<br>"+ "Found Fruit (Last) with 5 letters: "+found);
+
+    //findLastIndex
+    let found_Index = fruits.findLastIndex(member =>{
+        return member.length > 5;
+    })
+    document.write("<br>"+ "Found Last Fruit Index with 5 letters: "+found_Index);
+
+    document.write("<br>");
+
+    //number array
+    let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 21];
+    // num.sort()
+    // document.write("<br>"+"Sorted Number Array: "+num);
+
+    // num.sort((a, b) => b - a);
+    // document.write("<br>"+"Sorted Number Array in Descending Order: "+num);
+    // num.sort((a, b) => a - b);
+    // document.write("<br>"+"Sorted Number Array in Ascending Order: "+num);
+
+    document.write("<br>");
+
+    //reduce, reduceRight
+    let sum = num.reduceRight((accumulator, currentValue) =>{
+        document.write("<br>"+"Accumulator: "+accumulator + "<br>" + " Current Value: "+currentValue);
+       
+        return accumulator + currentValue;
+    },0)
+    document.write("<br>"+"Sum of Number Array: "+sum); 
+</script>
+</html>

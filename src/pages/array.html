@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 0, 6, 3, 7,8, 6, 2, 9];
+    document.write(arr); 
+    // <!-- array.psuh(new member) => adds new element to the end of array -->
+     arr.push(6);
+    document.write("<br>After push: "+arr);
+    // <!-- array.unshift(new member) => adds new element to the start of array -->
+     arr.unshift(6);
+    document.write("<br>After unshift: "+arr);
+
+    // <!-- array.splice(index, number, new member) 
+    //  index - where to add/remove
+    //  number - number of members to remove
+    //  new member = new member to add-->
+    let removed = arr.splice(1, 2); 
+    document.write("<br>After splice: "+arr);
+    document.write("<br>Removed: "+removed);
+
+    //pop() -> removes a member from the end
+    //shift() -> removes a member from the start
+     removed = arr.pop();
+     document.write("<br>After pop: "+arr);
+     document.write("<br>Removed: "+removed);
+     removed = arr.shift();
+     document.write("<br>After shift: "+arr);
+     document.write("<br>Removed: "+removed);
+
+     //sort()- sorts in an alphabetical order
+    removed = arr.sort();
+     document.write("<br>After sort: "+arr);
+     document.write("<br>Removed: "+removed);
+
+     //reverse() - reverses the order of the array
+        arr.reverse();
+        document.write("<br>After reverse: "+arr);
+
+    //slice(start index, end index)- creates new array from start index to end index/ end is not included. changes the original
+    let new_array = arr.slice(0,2);
+     document.write("<br>Original array: "+arr);
+     document.write("<br>New array: "+new_array);
+     new_array = arr.slice(1);
+     document.write("<br>New array: "+new_array);
+     //if negative index is provided, it counts from the end of the array
+     new_array = arr.slice(-3);
+     document.write("<br>New array: "+new_array);
+     new_array = arr.slice(-3, -1);
+     document.write("<br>New array: "+new_array);
+
+     //toSpliced - doesnt change original, just makes a new one
+     new_array = arr.toSpliced(0, 2);
+     document.write("<br>Original array: "+arr);
+     document.write("<br>New array: "+new_array);
+
+     new_new_array = new_array.toSorted()
+     document.write("<br>Sorted array: "+ new_new_array);
+     new_new_array = new_array.toReversed()
+     document.write("<br>New array: "+new_array);
+     document.write("<br>Reversed array: "+ new_new_array);
+
+</script>
+</html>
