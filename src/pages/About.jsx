@@ -12,7 +12,7 @@ const About = () => {
           {/* Left Side */}
           <div>
 
-            <p className="mb-4 text-justify">
+            <p className="mb-4 text-justify"> c   
               Store Front is a modern online shopping platform dedicated
               to providing customers with quality products at affordable
               prices. We aim to make online shopping simple, secure, and

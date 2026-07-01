@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsCart, BsPersonPlus } from 'react-icons/bs'
 import { RiLoginBoxFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import { MyThemeContext } from '../../App'
 
 const Headers = () => {
+    let{theme, setTheme} = useContext(MyThemeContext)
+
+    const toggletheme = () => {
+        if(theme == 'light'){
+            setTheme('dark')
+        }
+        else{
+            setTheme('light')
+        }
+    }
     return (
         <>
-            <div className="flex bg-slate-300 flex-col md:flex-row py-1.25 items-center">
+            <div className={`${theme == 'light' ? 'bg-slate-200' : 'bg-slate-700 text-white'} flex bg-slate-300 flex-col md:flex-row py-1.25 items-center`}>
                 <div className="logo w-full md:w-1/4 text-center text-2xl font-bold text-blue-500 cursor-pointer">
                     STORE FRONT
                 </div>
@@ -24,6 +35,13 @@ const Headers = () => {
                     <button>
                         <BsCart/>
                     </button>
+
+                    <button className={`btn ${theme == 'light' ? 
+                        'btn-light':'btn-dark'}`} 
+                        onClick = {toggletheme}>{theme}</button>
+
+                        <button className={`btn btn-${theme}`} 
+                        onClick = {toggletheme}>{theme}</button>
                 </div>
             </div>
 

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.btn-dark{
+    @apply px-4 py-2 bg-slate-700 text-white
+     hover:bg-slate-600 active:bg-slate-200;
+}
+
+.btn-light{
+    @apply px-4 py-2 bg-slate-300 text-black
+     hover:bg-slate-200 active:bg-slate-700;
+}
+
+.btn{
+    @apply rounded-2xl;
+    @apply shadow-2xl;
+    @apply cursor-pointer;
+}
