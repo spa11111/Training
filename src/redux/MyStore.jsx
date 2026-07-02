@@ -9,7 +9,7 @@ import localStorage from "redux-persist/es/storage"
 // const myStore = createStore(counterReducer)
 //const myStore = createStore(personReducer)
 
-const rootReducer = combineReducers => ({
+const rootReducer = combineReducers ({
     counterStore: counterReducer,
     personStore: personReducer
 })
