@@ -11,7 +11,7 @@ const ReduxPerson = () => {
     //let {name, phone} = useSelector(store => store)
   
 let {name, phone} = useSelector(store => store.personStore)
-
+console.log(name, phone)
 let [namee, setName] = useState('')
 let [phonee, setPhone] = useState('')
 
